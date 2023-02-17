@@ -1,13 +1,13 @@
-package com.example.homework10februar;
+package com.example.homework6februar;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Homework10FebruarApplication {
+public class Homework6FebruarApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Homework10FebruarApplication.class, args);
+        SpringApplication.run(Homework6FebruarApplication.class, args);
     }
 
 }
