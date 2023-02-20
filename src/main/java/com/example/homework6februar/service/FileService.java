@@ -1,4 +1,4 @@
-package service;
+package com.example.homework6februar.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

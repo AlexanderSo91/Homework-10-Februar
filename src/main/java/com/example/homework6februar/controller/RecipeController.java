@@ -1,11 +1,11 @@
-package controller;
+package com.example.homework6februar.controller;
 
-import annotation.Operation;
-import annotation.Tag;
-import model.Recipe;
+import com.example.homework6februar.model.Recipe;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.RecipeService;
+import com.example.homework6februar.service.RecipeService;
 
 import java.util.Map;
 
@@ -55,6 +55,7 @@ public class RecipeController {
     public ResponseEntity<Recipe> delete(@PathVariable Long id) {
         return ResponseEntity.ok(recipeService.delete(id));
     }
+
     @Operation(
             summary = "Получение рецепта"
     )

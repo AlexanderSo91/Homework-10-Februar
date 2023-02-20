@@ -1,7 +1,6 @@
-package service;
+package com.example.homework6februar.service;
 
-import model.Ingredient;
-import model.Recipe;
+import com.example.homework6februar.model.Recipe;
 
 import java.util.Map;
 import java.util.Optional;

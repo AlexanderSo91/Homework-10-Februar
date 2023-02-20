@@ -1,14 +1,16 @@
-package service;
+package com.example.homework6februar.service.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import exception.ValidationException;
+import com.example.homework6februar.exception.ValidationException;
 import lombok.RequiredArgsConstructor;
-import model.Ingredient;
+import com.example.homework6februar.model.Ingredient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import com.example.homework6februar.service.FileService;
+import com.example.homework6februar.service.IngredientService;
+import com.example.homework6februar.service.ValidationService;
 
 import javax.annotation.PostConstruct;
-import java.lang.reflect.Type;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,14 +35,13 @@ public class IngredientServiceImpl implements IngredientService {
 
     @Override
     public Ingredient save(Ingredient ingredient) {
-        if (validationService.validate(ingredient))
+        if(!validationService.validate(ingredient))
             throw new ValidationException(ingredient.toString());
 
-        ingredients.put(idCounter++, ingredient);
+        ingredients.put(idCounter++,ingredient);
         fileService.saveMapToFile(ingredients,ingredientPath);
 
         return ingredient;
-
     }
 
     @Override

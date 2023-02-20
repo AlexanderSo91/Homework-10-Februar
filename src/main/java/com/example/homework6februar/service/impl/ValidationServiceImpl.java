@@ -1,17 +1,17 @@
-package service;
+package com.example.homework6februar.service.impl;
 
-import model.Ingredient;
-import model.Recipe;
-import org.apache.tomcat.util.codec.binary.StringUtils;
+import com.example.homework6februar.model.Ingredient;
+import com.example.homework6februar.model.Recipe;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
+import com.example.homework6februar.service.ValidationService;
 
 @Service
 public class ValidationServiceImpl implements ValidationService {
     @Override
     public boolean validate(Recipe recipe) {
         return recipe != null
-                && recipe.getName() != null
-                && StringUtils.isEmpty(recipe.getName())
+                && !StringUtils.isEmpty(recipe.getName())
                 && recipe.getSteps() != null
                 && recipe.getIngredients() != null
                 && recipe.getIngredients().isEmpty()
